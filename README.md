@@ -7,11 +7,10 @@
 ## ✨ 特性
 
 - 网易云音乐合伙人自动评分 ✔
-- 什么值得买自动签到 （目前值得买签到增加验证码..签到用不了，看后边有没有大佬提供思路吧）
 
 ## 🔨 使用
 
-由于青龙v2.12.0以后调整数据目录，log、db、scripts、config等目录迁移到 /ql/data 目录，请使用下面命令的时候注意一下自己的青龙面板版本，看是否需要在路径上加/data
+适配新版青龙。
 
 #### 1.进入容器
 ```
@@ -21,11 +20,11 @@ docker exec -it ql bash
 
 #### 2.拉取仓库
 ```
-ql repo https://github.com/KotoriMinami/qinglong-sign.git "sign_"
+ql repo https://github.com/YYplus/qinglong-sign.git "sign_"
 ```
 #### 3.拷贝配置文件
 ```
-cp /ql/repo/KotoriMinami_qinglong-sign/sg_config.json /ql/config/sg_check.json
+cp /ql/data/repo/KotoriMinami_qinglong-sign/sg_config.json /ql/data/config/sg_check.json
 ```
 #### 4.安装下面两个依赖
 `PyExecJS`
@@ -34,7 +33,7 @@ cp /ql/repo/KotoriMinami_qinglong-sign/sg_config.json /ql/config/sg_check.json
 不会的可以直接去 web端的`控制面板 / 依赖管理 / Python3` 处添加依赖
 
 #### 5.配置json文件
-在青龙面板的配置目录（`/ql/config`）下找到 `sg_check.json` 文件 或 前往web端的`控制面板 / 配置文件` 下拉选择`sg_check.json`
+在青龙面板的配置目录（`/ql/data/config`）下找到 `sg_check.json` 文件 或 前往web端的`控制面板 / 配置文件` 下拉选择`sg_check.json`
 
 
 然后根据配置说明进行抓包配置即可， 想单个脚本使用的朋友可[参考](https://github.com/KotoriMinami/qinglong-sign/issues/1)
@@ -44,7 +43,6 @@ cp /ql/repo/KotoriMinami_qinglong-sign/sg_config.json /ql/config/sg_check.json
 | 配置名称            | 说明          | 获取位置                            |
 |:----------------|:------------|:--------------------------------|
 | MUSIC_COPARTNER | 网易云音乐cookie | [网易云音乐](https://music.163.com/) |
-| SMZDM           | 什么值得买cookie | [什么值得买](https://www.smzdm.com/) |
 
 ## 🔈 特别声明
 
